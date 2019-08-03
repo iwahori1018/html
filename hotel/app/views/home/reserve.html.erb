@@ -1,0 +1,20 @@
+<header>
+  <div class = "header">
+    <div class="header-logo">
+      <a href="/">TOP</a>
+    </div>
+  </div>
+</header>
+<div class="main top-main">
+  <div class="top-message">
+    <h2>予約</h2>
+    <%= form_for(@book) do |f| %>
+      <div>
+        <%= f.text_field :isbn, class: "hogehoge" %>
+      </div>
+    <% end %>
+    <%= button_to "予約", {controller: 'home', action: 'reserve'}, {method: :get, class: "button"}%>
+    <%= button_to "変更", {controller: 'home', action: 'change'}, {method: :get, class: "button"}%>
+    <%= button_to "削除", {controller: 'home', action: 'delete'}, {method: :get, class: "button"}%>
+  </div>
+</div>
