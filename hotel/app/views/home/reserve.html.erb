@@ -8,10 +8,12 @@
 <div class="main top-main">
   <div class="top-message">
     <h2>予約</h2>
-    <%= form_for(@book) do |f| %>
-      <div>
-        <%= f.text_field :isbn, class: "hogehoge" %>
-      </div>
+    <%= form_with do |f|%>
+      <p>名前</p>
+      <p><%= f.text_field :name %></p>
+      <p>電話番号</p>
+      <p><%= f.text_field :coll %></p>
+      <%= f.submit("予約") %>
     <% end %>
     <%= button_to "予約", {controller: 'home', action: 'reserve'}, {method: :get, class: "button"}%>
     <%= button_to "変更", {controller: 'home', action: 'change'}, {method: :get, class: "button"}%>
